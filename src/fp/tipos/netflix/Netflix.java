@@ -118,12 +118,14 @@ public class Netflix implements Comparable<Netflix>{
 				+ ", mundial=" + mundial + ", visualizaciones=" + visualizaciones + getTipoClasificacion() + "]";
 	}
 
-	@Override
+	/**
+	 * dos series son iguales si su titulo y fecha de estreno son iguales.
+	 */
 	public int hashCode() {
 		return Objects.hash(fEstreno, titulo);
 	}
 
-	@Override
+	
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -135,7 +137,9 @@ public class Netflix implements Comparable<Netflix>{
 		return Objects.equals(fEstreno, other.fEstreno) && Objects.equals(titulo, other.titulo);
 	}
 	
-	//DERIVADA
+	/**
+	 * @return La clasificación de la serie según las visualizaciones.
+	 */
 	public TipoClasificacion getTipoClasificacion() {
 		TipoClasificacion res= TipoClasificacion.A;
 		if(getVisualizaciones()<10) {
@@ -147,14 +151,17 @@ public class Netflix implements Comparable<Netflix>{
 		return res;
 		
 	}
-	
-public int compareTo(Netflix n) {
+	/**
+	 * Las series se ordenan por titulo y fecha de estreno.
+	 */
 		
-		int res= getTitulo().compareTo(n.getTitulo());
-		if(res==0) {
-			res = getTitulo().compareTo(n.getTitulo());
-		}
-		return res;
+	public int compareTo(Netflix n) {
+			int r;
+			r = getTitulo().compareTo(n.getTitulo());
+			if (r == 0) {
+				r = getfEstreno().compareTo(n.getfEstreno());
+			}
+			return r;
 	
 }
 

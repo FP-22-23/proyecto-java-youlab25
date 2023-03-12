@@ -53,41 +53,14 @@ Representa una serie de netflix concreta.
  
 - R1: el titulo no puede ser nulo
 - R2: las visualizaciones deben ser mayor que cero.
-***Criterio de igualdad**: Dos partidas son iguales si todas sus propiedades básicas son iguales.
+***Criterio de igualdad**: Dos series son iguales si su titulo y fecha de estreno son iguales.
 
-**Criterio de ordenación**: Por fecha, duración y número de movimientos.
-
-**Otras operaciones**:
-
-- _String getMovimiento(Integer numMovimiento)_: Devuelve el movimiento dado por el número numMovimiento. Eleva ```IllegalArgumentException``` si ```numMovimiento``` no está en el intervalo [1, getNumMovimientos()]
+**Criterio de ordenación**: Por titulo y fecha de estreno.
 
 #### Tipos auxiliares
 
-- TipoVictoria, enumerado. Puede tomar los valores OUTOFTIME, RESIGN, MATE, DRAW.
-- Resultado, enumerado. Puede tomar los valores WHITE, BLACK, DRAW.
-
-### Factoría - FactoriaPartidas
-Clase de factoría para construir objetos de tipo Partidas.
-
-- _Partidas leerPartidas(String nomfich)_:Crea un objeto de tipo Partidas a partir de la información recogida en el archivo csv, cuya ruta se da como parámetro.
-
-
-### Tipo Contenedor - Partidas
-
-Clase contenedora de los objetos de tipo Partida.
-
-**Propiedades**:
-
--  _partidas_, de tipo _List\<Partida\>_, consultable. Lista de partidas de ajedrez 
--  _numero partidas_, de tipo _Integer_, consultable. Número de partidas del contenedor. 
- 
-**Constructores**: 
-
-- C1: Constructor por defecto. Creal un objeto de tipo Partidas sin ninguna partida almacenada.
-- C2: Constructor con un parámetro de tipo Collection\<Partida\>. Crea un objeto de tipo Partidas con las partidas incluidas en la colección dada como parámetro.
-- C3: Constructor con un parámetro de tipo Stream\<Partida\>. Crea un objeto de tipo Partidas con las partidas incluidas en el Stream dado 
-
-**Criterio de igualdad**: Dos partidas son iguales si lo son sus propiedades partidas.
+- Estado, enumerado. Puede tomar los valores  ENDED,RENEWED,PENDING.
+- TipoClasificacion, enumerado. Puede tomar los valores A, B, C.
 
 
 **Otras operaciones**:

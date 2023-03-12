@@ -10,7 +10,7 @@ public class TestNetflix {
 	public static void main(String[] args) {
 		Netflix n1 = new Netflix("Hemlock Grove", "Horror", "Netflix", LocalDate.of(2016, 2, 26), 3, 20, Estado.RENEWED, true, 21.72387539);
 		Netflix n2 = new Netflix("Hemlock Grove","Horror","Netflix", LocalDate.of(2016, 2, 26), 12, false, 21.72387539);
-		Netflix n3 = new Netflix("House of Cards","Political drama","Netflix", LocalDate.of(2013, 2, 3), 10, true, 33.38184514);
+		Netflix n3 = new Netflix("House of Cards","Political drama","Netflix", LocalDate.of(2017, 2, 3), 10, true, 33.38184514);
 		System.out.println(n1);
 		n1.setEstado(Estado.PENDING);
 		System.out.println(n1);
