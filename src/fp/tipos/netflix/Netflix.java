@@ -5,7 +5,7 @@ import java.util.Objects;
 
 import utiles.Checkers;
 
-public class Netflix {
+public class Netflix implements Comparable<Netflix>{
 	private String titulo;
 	private String genero;
 	private String plataforma;
@@ -115,7 +115,7 @@ public class Netflix {
 	public String toString() {
 		return "Netflix [titulo=" + titulo + ", genero=" + genero + ", plataforma=" + plataforma + ", fEstreno="
 				+ fEstreno + ", temporadas=" + temporadas + ", capitulos=" + capitulos + ", estado=" + estado
-				+ ", mundial=" + mundial + ", visualizaciones=" + visualizaciones + "]";
+				+ ", mundial=" + mundial + ", visualizaciones=" + visualizaciones + getTipoClasificacion() + "]";
 	}
 
 	@Override
@@ -137,19 +137,25 @@ public class Netflix {
 	
 	//DERIVADA
 	public TipoClasificacion getTipoClasificacion() {
-		TipoClasificacion res= TipoClasificacion.MASVISTOS;
+		TipoClasificacion res= TipoClasificacion.A;
 		if(getVisualizaciones()<10) {
-			res= TipoClasificacion.MENOSVISTOS;
+			res= TipoClasificacion.C;
 		}
 		else if (getVisualizaciones()<= 30) {
-			res= TipoClasificacion.MEDIOS;
+			res= TipoClasificacion.B;
 		}
 		return res;
 		
 	}
 	
-
+public int compareTo(Netflix n) {
+		
+		int res= getTitulo().compareTo(n.getTitulo());
+		if(res==0) {
+			res = getTitulo().compareTo(n.getTitulo());
+		}
+		return res;
 	
-	
+}
 
 }
