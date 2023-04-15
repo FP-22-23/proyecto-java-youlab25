@@ -164,22 +164,5 @@ public class Netflix implements Comparable<Netflix>{
 			return r;
 	
 }
-	
-	
-//	JKK
-//	KJK
 
 }
-
-
-
-
-
-//ghgergjtrjhyh
-
-
-
-
-
-
-
