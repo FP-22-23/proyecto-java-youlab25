@@ -8,26 +8,73 @@ import fp.tipos.netflix.Netflix;
 public class TestNetflix {
 
 	public static void main(String[] args) {
-		Netflix n1 = new Netflix("Hemlock Grove", "Horror", "Netflix", LocalDate.of(2016, 2, 26), 3, 20, Estado.RENEWED, true, 21.72387539);
-		Netflix n2 = new Netflix("Hemlock Grove","Horror","Netflix", LocalDate.of(2016, 2, 26), 12, false, 21.72387539);
-		Netflix n3 = new Netflix("House of Cards","Political drama","Netflix", LocalDate.of(2017, 2, 3), 10, true, 33.38184514);
-		System.out.println(n1);
-		n1.setEstado(Estado.PENDING);
-		System.out.println(n1);
-		System.out.println(n2);
-		System.out.println("Codigo hash de n1:" + n1.hashCode());
-		System.out.println("Codigo hash de n2:" + n2.hashCode());
-		System.out.println("Codigo hash de n3:" + n3.hashCode());
-		System.out.println("Son n1 y n2 iguales?:" + n1.equals(n2));
-		System.out.println("Son n1 y n3 iguales?:" + n1.equals(n3));
-		System.out.println("resultado n1.comparateTo(n2): " + n1.compareTo(n2));
-		System.out.println("resultado n2.comparateTo(n3): " + n2.compareTo(n3));
-		Netflix n4 = new Netflix(null, "Horror", "Netflix", LocalDate.of(2016, 2, 26), 3, 20, Estado.RENEWED, true, 21.72387539);
-		System.out.println(n4); //comprobacion de la restriccion 1
-		Netflix n5 = new Netflix("Hemlock Grove", "Horror", "Netflix", LocalDate.of(2016, 2, 26), 3, 20, Estado.RENEWED, true, -21.72387539);
-		System.out.println(n4); //comprobacion de la restriccion 2
+		//Constructor 1
+				Netflix d1 = new Netflix("El Zapato Rojo","Netflix",LocalDate.of(2016,9,15),4,12, Estado.MINISERIES,false, 12.673736); 
+				
+				System.out.println(d1);
+				/*
+				System.out.println(d2.getTitulo());
+				System.out.println(d2.getGenero());
+				System.out.println(d2.getPlataforma());
+				System.out.println(d2.getMundial());
+				System.out.println(d2.getCapitulos());
+				System.out.println(d2.getTemporadas());
+				System.out.println(d2.getVisualizaciones());
+				System.out.println(d2.getEstado());
+				System.out.println(d2.getfEstreno());
+				System.out.println(d2.getTipoClasificacion());
+				*/
+				
+				//System.out.println(d1.getFormatoCorto());
+				
+
+				//Constructor 2
+				Netflix d2 = new Netflix("Kido,	netflix," + "Drama,"+ "11/11/09,	2, 10, Ended, true, 17.87488");
+				
+				System.out.println(d2);
+				/*
+				System.out.println(d2.getTitulo());
+				System.out.println(d2.getGenero());
+				System.out.println(d2.getPlataforma());
+				System.out.println(d2.getMundial());
+				System.out.println(d2.getCapitulos());
+				System.out.println(d2.getTemporadas());
+				System.out.println(d2.getVisualizaciones());
+				System.out.println(d2.getEstado());
+				System.out.println(d2.getfEstreno());
+				System.out.println(d2.getTipoClasificacion());
+				*/
+				
+				//System.out.println(d2.getFormatoCorto());
+				
+				Netflix d3 = new Netflix("The Lions, Netflix," + "Social Drama,"+ "12/12/09,	2, 11, Ended, false, 22.97487");
+				System.out.println(d3);
+				
+				
+				
+				/*
+				System.out.println(d1==d2);
+				System.out.println(d1==d3);
+				System.out.println(d3==d2);
+				*/
+				
+				/*
+				System.out.println(d1.equals(d2)); 
+				System.out.println(d1.equals(d3));
+				System.out.println(d3.equals(d2));
+				*/
+				
+				/*
+				System.out.println(d2.hashCode() == d1.hashCode());
+				System.out.println(d2.hashCode() == d3.hashCode()); 
+				*/
+				
+				/*
+				System.out.println(d1.compareTo(d2)); 
+				System.out.println(d1.compareTo(d3)); // 
+				*/
+				
 
 	}
 
 }
-
