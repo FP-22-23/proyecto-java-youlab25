@@ -1,4 +1,4 @@
-package fp.tipos.netflix;
+package common;
 
 public enum TipoClasificacion {
 	A, B, C;
