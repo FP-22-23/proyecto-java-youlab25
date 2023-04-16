@@ -74,23 +74,23 @@ Clase contenedora de los objetos de tipo Job.
 # Propiedades:
 
 * **movies** , de tipo <List>, consultable y modificable.
-# Constructores: -C1: Constructor por defecto. Crea un objeto de tipo Series sin ninguna serie almacenada. -C2: Constructor con un parámetro de tipo Collection. Crea un objeto de tipo Series con las series incluidas en la colección dada como parámetro.
+- Constructores: -C1: Constructor por defecto. Crea un objeto de tipo Series sin ninguna serie almacenada. -C2: Constructor con un parámetro de tipo Collection. Crea un objeto de tipo Series con las series incluidas en la colección dada como parámetro.
 
-# Criterio de igualdad:Dos Series son iguales si lo es su propiedad serie, es decir si contienen los mismos objetos de tipo Netflix.
+- Criterio de igualdad:Dos Series son iguales si lo es su propiedad serie, es decir si contienen los mismos objetos de tipo Netflix.
 
-# Representación como cadena: Imprime por pantalla el atributo movies asi como el número de objetos del contenedor.
+- Representación como cadena: Imprime por pantalla el atributo movies asi como el número de objetos del contenedor.
 
 
-# Otras operaciones:
+### Otras operaciones:
 
-getNumeroSeries(): devuelve el número de objetos de tipo Netflix del contenedor.
-anadirSerie(Netflix n): añade el Netflix n al contenedor.
-añadirColeccion(Collection c): añade la colleción c al contenedor.
-eliminarSerie(Netflix n): elimina la serie n de la colección.
-existeSerieEnPlataforma(String plataforma): devuelve true si existe alguna serie en la plataforma pasada por parámetro.
-getMediaVisualizacionSerie(String titulo): retorna la visualizacion media del titulo de la serie pasada por parámetro.
-getSeriesLargas(): devuelve un conjunto con las series de mas de 10 capitulos.
-getSeriesPorCategoria():retorna un diccionario que agrupa series por categoria.
-getNumeroSeriesPorEstado(): devueve un diccionario que cuenta el número de series por estado.
+- getNumeroSeries(): devuelve el número de objetos de tipo Netflix del contenedor.
+- anadirSerie(Netflix n): añade el Netflix n al contenedor.
+- añadirColeccion(Collection c): añade la colleción c al contenedor.
+- eliminarSerie(Netflix n): elimina la serie n de la colección.
+- existeSerieEnPlataforma(String plataforma): devuelve true si existe alguna serie en la plataforma pasada por parámetro.
+- getMediaVisualizacionSerie(String titulo): retorna la visualizacion media del titulo de la serie pasada por parámetro.
+- getSeriesLargas(): devuelve un conjunto con las series de mas de 10 capitulos.
+- getSeriesPorCategoria():retorna un diccionario que agrupa series por categoria.
+- getNumeroSeriesPorEstado(): devueve un diccionario que cuenta el número de series por estado.
 
 
