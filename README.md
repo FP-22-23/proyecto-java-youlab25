@@ -71,7 +71,7 @@ Clase de factoría para construir objetos de tipo Job.
 ##### Tipo Contenedor - Series
 Clase contenedora de los objetos de tipo Job.
 
-# Propiedades:
+#### Propiedades:
 
 * **movies** , de tipo <List>, consultable y modificable.
 - Constructores: -C1: Constructor por defecto. Crea un objeto de tipo Series sin ninguna serie almacenada. -C2: Constructor con un parámetro de tipo Collection. Crea un objeto de tipo Series con las series incluidas en la colección dada como parámetro.
@@ -81,7 +81,7 @@ Clase contenedora de los objetos de tipo Job.
 - Representación como cadena: Imprime por pantalla el atributo movies asi como el número de objetos del contenedor.
 
 
-### Otras operaciones:
+##### Otras operaciones:
 
 - getNumeroSeries(): devuelve el número de objetos de tipo Netflix del contenedor.
 - anadirSerie(Netflix n): añade el Netflix n al contenedor.
