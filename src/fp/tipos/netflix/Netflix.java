@@ -11,8 +11,8 @@ import utiles.Checkers;
 
 public class Netflix {
 	private String titulo;
-	private List<String> genero;
-	private String plataforma;
+	private String genero;
+	private List<String> plataforma;
 	private LocalDate fEstreno;
 	private Integer temporadas;
 	private Integer capitulos;
@@ -22,7 +22,7 @@ public class Netflix {
 	
 	
 	//CONSTRUCTOR 1
-		public Netflix(String titulo, String plataforma, LocalDate fEstreno,
+		public Netflix(String titulo, String genero, LocalDate fEstreno,
 				Integer temporadas,Integer capitulos, Estado estado,Boolean mundial, 
 				Double visualizaciones) {
 			Checkers.check("El nombre de la serie no puede estar vacio", 
@@ -31,8 +31,8 @@ public class Netflix {
 					capitulos > 0);
 			
 			this.titulo=titulo;
-			this.genero=null;
-			this.plataforma=plataforma;
+			this.genero=genero;
+			this.plataforma=null;
 			this.fEstreno=fEstreno;
 			this.temporadas=temporadas;
 			this.capitulos=capitulos;
@@ -41,6 +41,7 @@ public class Netflix {
 			this.visualizaciones=visualizaciones;
 		}
 		
+	//CONSTRUCTOR 2
 		public Netflix(String s) {
 			String[] sp = s.split(";");
 			if (sp.length != 9) {
@@ -55,14 +56,13 @@ public class Netflix {
 					Integer.valueOf(sp[5].trim()) > 0);
 			
 			this.titulo = sp[0].trim();
-			
+			this.genero = sp[1].trim();
 			List<String> lista = new LinkedList<String>();
-			String[] genero = sp[1].trim().split(":");
-			for (String h : genero) {
+			String[] plataforma = sp[2].trim().split(":");
+			for (String h : plataforma) {
 				lista.add(h);
 			}
-			this.genero = lista;
-			this.plataforma = sp[2].trim();
+			this.plataforma = lista;
 			this.fEstreno = LocalDate.parse(sp[3].trim(), DateTimeFormatter.ofPattern("d/M/yyyy"));
 			this.temporadas = Integer.valueOf(sp[4].trim());
 			this.capitulos = Integer.valueOf(sp[5].trim());
@@ -98,11 +98,11 @@ public class Netflix {
 			return titulo;
 		}
 
-		public List<String> getGenero() {
+		public String getGenero() {
 			return genero;
 		}
 
-		public String getPlataforma() {
+		public List<String> getPlataforma() {
 			return plataforma;
 		}
 
@@ -138,7 +138,7 @@ public class Netflix {
 			this.titulo = titulo;
 		}
 
-		public void setGenero(List<String> genero) {
+		public void setGenero(String genero) {
 			this.genero = genero;
 		}
 

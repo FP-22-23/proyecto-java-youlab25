@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Series {
 	
@@ -82,11 +84,11 @@ public class Series {
 	}
 	
 	//Tratamientos secuenciales 
-	// 1 -> ¿Existe alguna serie en una plataforma pasada por parámetro?
-	public Boolean existeSerieEnPlataforma(String plataforma) {
+	// 1 -> ¿Existe alguna serie con un genero pasado por parámetro?
+	public Boolean existeSerieConGenero(String genero) {
 		Boolean res = false;
 		for(Netflix n: movies) {
-			if (n.getPlataforma().equals(plataforma)){
+			if (n.getGenero().equals(genero)){
 				res = true;
 				break;
 			}
@@ -94,11 +96,11 @@ public class Series {
 		return res;
 	}
 	// 2 -> Media de visualizacion de la Serie pasada por parámetro
-	public Double getMediaVisualizacionNetflix(String titulo) {
+	public Double getMediaVisualizacionNetflix(String genero) {
 			Double total = 0.0;
 			Integer contador = 0;
 			for (Netflix n: movies) {
-				if (n.getTitulo().equals(titulo)) {
+				if (n.getGenero().equals(genero)) {
 					total += n.getVisualizaciones();
 					contador ++;
 				}}
@@ -167,7 +169,11 @@ public class Series {
 	
 	
 	
-	
+	//----------------------------------- 3ª ENTREGA -----------------------------------
+			//Constructor 3: crea un objeto del tipo contenedor con todos los elementos del stream.
+			public Series(Stream<Netflix> movies) {
+				this.movies = movies.collect(Collectors.toList());
+			}	
 
 	
 	

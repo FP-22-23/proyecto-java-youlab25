@@ -13,25 +13,25 @@ public class TestSeries {
 	private static Series movies = new Series(FactoriaNetflix.leerSeries("data/netflix_originals.csv"));
 	private static Collection<Netflix> col = FactoriaNetflix.leerSeries("data/netflix_originals.csv");
 	
-	private static String s = "The Black Rose;Netflix;15/04/2023;1;6;Pending;true;13,51184511;" +"Drama";
+	private static String s = "Ana;Crime drama;Netflix:Disney;12/03/2020;1;6;Ended;false;28.94760201";
 	private static Netflix n1 = new Netflix(s);
 
 	public static void main(String[] args) {
-		//testOperacionesBasicas();
+		testOperacionesBasicas();
 		
 		
 		//Tratamientos secuenciales 
 					//1
-		//testExisteSerieEnPlataforma("Netflix"); //Devuelve true
-		//testExisteSerieEnPlataforma("Disney"); //Devuelve false
+		testExisteSerieConGenero("Drama"); //Devuelve true
+		testExisteSerieConGenero("Romantica"); //Devuelve false
 					//2
-		//testGetMediaVisualizacionNetflix("Narcos");
+		testGetMediaVisualizacionNetflix("Superhero fiction");
 					//3
-		//testGetSeriesLargas();
+		testGetSeriesLargas();
 					//4
-		//testGetSeriesPorCategoria();
+		testGetSeriesPorCategoria();
 					//5
-		//testGetNumeroSeriesPorEstado();
+		testGetNumeroSeriesPorEstado();
 				
 			}
 	
@@ -56,7 +56,7 @@ public class TestSeries {
 			//d --> Eliminar un elemento
 			System.out.println("Elimino n1 del contenedor");
 			movies.eliminarSerie(n1);
-			System.out.println("Empleos contiene a n1: " + movies.getMovies().contains(n1) +
+			System.out.println("Series contiene a n1: " + movies.getMovies().contains(n1) +
 					"\nAhora el numero de elemetos es: " + movies.getNumeroSeries()+ "\n");
 
 			} catch(Exception e) {
@@ -65,22 +65,22 @@ public class TestSeries {
 		}
 		
 		//Test Tratamientos secuenciales
-				// 1 -> ¿Existe alguna serie en una pltaforma pasada por parámetro?
-			private static void testExisteSerieEnPlataforma(String plataforma) {
-				System.out.println("\n----TestExisteSerieEnPlataforma----");
+				// 1 -> ¿Existe alguna serie  con el genero pasado por parámetro?
+			private static void testExisteSerieConGenero(String genero) {
+				System.out.println("\n----TestExisteSerieConGenero----");
 				try {
-				System.out.println("¿Hay alguna serie en plataforma " + plataforma +"?"+"\n");
-				System.out.println(movies.existeSerieEnPlataforma(plataforma));
+				System.out.println("¿Hay alguna serie con genero " + genero +"?"+"\n");
+				System.out.println(movies.existeSerieConGenero(genero));
 				} catch(Exception e) {
 					System.out.println("Excepción capturada:\n   " + e);	
 				}
 			}
 				// 2 -> Media de visualizacion de la serie pasada por parámetro 
-			private static void testGetMediaVisualizacionNetflix(String titulo) {
-				System.out.println("\n----testGetMediaVisualizacionNetflix(String titulo)----");
+			private static void testGetMediaVisualizacionNetflix(String genero) {
+				System.out.println("\n----testGetMediaVisualizacionNetflix(String genero)----");
 				try {
-					System.out.println("La visualizacion media de la serie " + titulo +" es: ");
-					System.out.print(movies.getMediaVisualizacionNetflix(titulo)+"\n");
+					System.out.println("La visualizacion media del genero " + genero +" es: ");
+					System.out.print(movies.getMediaVisualizacionNetflix(genero)+"\n");
 				} catch(Exception e) {
 					System.out.println("Excepción capturada:\n   " + e);	
 				}
