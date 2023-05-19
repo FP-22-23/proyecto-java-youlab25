@@ -16,8 +16,8 @@ Autor/a: Youssra Labib   uvus:youlab
 El dataset original Netflix originals Dataset se puede obtener de la URL [http://kaggle.com/abhimanyudasarwar/netflix-originals](http://kaggle.com/abhimanyudasarwar/netflix-originals). Originalmente tiene 8 columnas y cada fila contiene datos sobre una serie de netflix. El dataset usado en este proyecto tiene 9 columna, 7 se han tomado del dataset original, y dos, el boleano de mundial y el número de visualizaciones, se han generado de forma aleatoria. A continuación se describen las 9 columnas del dataset:
 
 * **title**: de tipo cadena, contiene el nombre de la serie.
-* **genre**: de tipo <List<String<>,indica el genero de la serie. 
-* **original_network**: de tipo cadena, indica la plataforma en la que está disponible la serie.
+* **genre**: de tipo cadena,indica el genero de la serie. 
+* **original_network**: de tipo List<String>, indica la plataforma en la que está disponible la serie.
 * **premiere**: de tipo fecha, indica la fecha de estreno de la serie.
 * **seasons**: de tipo entero, indica el numero de temporadas de la serie.
 * **episodes**: de tipo entero, indica el numero de capitulos de la serie.
