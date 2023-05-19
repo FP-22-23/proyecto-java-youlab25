@@ -34,8 +34,8 @@ Representa una serie de netflix concreta.
 **Propiedades**:
 
 - _titulo_, de tipo _String_, consultable. contiene el nombre de la serie.
-- _genero_, de tipo _<List>_, consultable. Contiene el el genero de la serie.
-- _plataforma_, de tipo _String_, consultable. Indica la plataforma en la que está disponible la serie, que seria Netflix.
+- _genero_, de tipo _String_, consultable. Contiene el el genero de la serie.
+- _plataforma_, de tipo _<List>_, consultable. Indica las plataformas en la que está disponible la serie.
 - _fEstreno_, de tipo _LocalDate_, consultable. Indica la fecha de estreno de la serie.
 - _temporadas_, de tipo _Integer_, consultable y modificable. Contiene el numero de temporadas de la serie.
 - _capitulos_, de tipo _Integer_, consultable y modificable. Contiene el numero de capitulos de la serie.
