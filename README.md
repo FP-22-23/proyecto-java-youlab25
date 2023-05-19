@@ -48,8 +48,8 @@ Representa una serie de netflix concreta.
 **Constructores**: 
 
 - C1: Crea un objeto de tipo ```Netflix``` a partir de los siguientes parámetros: ```String titulo, String genero, String plataforma, LocalDate fEstreno, Integer capitulos, Boolean mundial, Double visualizaciones```.Tiene un parámetro por la propiedad del tipo estado y las temporadas.
-- C1: Crea un objeto de tipo ```Netflix``` a partir de los siguientes parámetros: ```String titulo, String genero, String plataforma, LocalDate fEstreno, Integer temporadas,Integer capitulos, Estado estado,Boolean mundial, Double visualizaciones```.
-
+- C2: Crea un objeto de tipo ```Netflix``` a partir de los siguientes parámetros: ```String titulo, String genero, String plataforma, LocalDate fEstreno, Integer temporadas,Integer capitulos, Estado estado,Boolean mundial, Double visualizaciones```.
+- C3: Crea un objeto del tipo contenedor con todos los elementos del stream.
 **Restricciones**:
  
 - R1: el titulo no puede ser nulo
@@ -92,5 +92,15 @@ Clase contenedora de los objetos de tipo Job.
 - getSeriesLargas(): devuelve un conjunto con las series de mas de 10 capitulos.
 - getSeriesPorCategoria():retorna un diccionario que agrupa series por categoria.
 - getNumeroSeriesPorEstado(): devueve un diccionario que cuenta el número de series por estado.
+- existeSerieConGeneroStream(String genero):Devuelve alguna serie con un genero pasado por parámetro 
+- getMediaVisualizacionNetflixStream(String genero): Devuelve la media de visualizacion de las series con genero pasado por parámetro
+- getSeriesLargasStream(): Devuelve las series con más de 10 capitulos
+- getSerieMundialMaxTemporadas():Devuelve las series mundiales con más temporadas
+- getSerieMundialEstadoOrdenadoFechaVisualizacion(Estado e):Devuelve las series mundiales de estado pasado por parámetro ordenadas por fecha de estreno de la serie y después por visualizacion.
+- getNumeroSeriesPorEstadoStream(): Devuelve un diccionario contador: seies por estados
+- getTitulosPorEstadoStream():Devuelve un diccionario que obtiene por cada estado los titulos de las series.
+- getVisualizacionPorFechaStream():Devuelve un map en el que las claves son los años de la fecha de estreno y los valores la serie con mayor visualizaciones (max)
+- getSeriesPeoresPorEstado(): Devuelve un SortedMap en el que las claves son los estados y los valores son listas con las n peores series de ese estado.
+- getMejorSeriePorMedia():  Calcula un map con la visualizacion media por genero y devuelve el genero con mayor visualizacion
 
 

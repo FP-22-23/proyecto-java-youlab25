@@ -69,6 +69,10 @@ public class Series {
 		return "Series [movies=" + movies + "]";
 	}
 	
+	
+	//----------------------------------- ENTREGA 2 -----------------------------------
+	
+//Funciones básicas
 	// Obtener el número de elementos
 	public Integer getNumeroSeries() {
 		return movies.size();
@@ -89,7 +93,7 @@ public class Series {
 		movies.remove(n);
 	}
 	
-	//Tratamientos secuenciales 
+//Tratamientos secuenciales 
 	// 1 -> ¿Existe alguna serie con un genero pasado por parámetro?
 	public Boolean existeSerieConGenero(String genero) {
 		Boolean res = false;
@@ -175,7 +179,7 @@ public class Series {
 	
 	
 	
-	//----------------------------------- 3ª ENTREGA -----------------------------------
+	//----------------------------------- ENTREGA 3 -----------------------------------
 			//Constructor 3: crea un objeto del tipo contenedor con todos los elementos del stream.
 			public Series(Stream<Netflix> movies) {
 				this.movies = movies.collect(Collectors.toList());
@@ -185,14 +189,14 @@ public class Series {
 			//1 -> ¿Existe alguna serie con un genero pasado por parámetro?
 				public Boolean existeSerieConGeneroStream(String genero) {
 					Boolean res = movies.stream()
-							.anyMatch(e -> e.getGenero().equals(genero));
+							.anyMatch(s -> s.getGenero().equals(genero));
 					return res;
 				}
-				// 2 -> Media de visualizacion de la Serie pasada por parámetro
+				// 2 -> Media de visualizacion de las series con genero pasado por parámetro
 				public Double getMediaVisualizacionNetflixStream(String genero) {
 					OptionalDouble opt = movies.stream()
-							.filter(e -> e.getGenero().equals(genero))
-							.mapToDouble(e -> e.getVisualizaciones())
+							.filter(s -> s.getGenero().equals(genero))
+							.mapToDouble(s -> s.getVisualizaciones())
 							.average();
 					return opt.orElse(0.);
 							
@@ -200,7 +204,7 @@ public class Series {
 			// 3 ->  Selección de series con más de 10 capitulos 
 				public Set<String> getSeriesLargasStream(){
 					Set<String> res = movies.stream()
-							.filter(e -> e.getCapitulos() > 10)
+							.filter(s -> s.getCapitulos() > 10)
 							.map(Netflix::getTitulo)
 							.collect(Collectors.toSet());
 					return res;
@@ -208,17 +212,17 @@ public class Series {
 			// 4 -> Serie mundial y más temporadas
 				public Netflix getSerieMundialMaxTemporadas() {
 					Netflix res = movies.stream()
-							.filter(e -> e.getMundial().equals(true))
+							.filter(s -> s.getMundial().equals(true))
 							.max(Comparator.comparing(Netflix::getTemporadas))
 							.orElse(null);
 					return res;
 				}
 			// 5 -> Selección de series mundiales de estado pasado por parámetro 
 				//ordenadas por fecha de estreno de la serie y después por visualizacion.
-				public Set<Netflix> getSerieMundialEstadoOrdenadoFechaVisualizacion(Estado s){
+				public Set<Netflix> getSerieMundialEstadoOrdenadoFechaVisualizacion(Estado e){
 					Set<Netflix> res = movies.stream()
-							.filter(e -> e.getMundial().equals(true))
-							.filter(e -> e.getEstado().equals(s))
+							.filter(s -> s.getMundial().equals(true))
+							.filter(s -> s.getEstado().equals(e))
 							.sorted(Comparator.comparing(Netflix::getfEstreno) 
 							.thenComparing(Comparator.comparing(Netflix::getVisualizaciones)))
 							.collect(Collectors.toSet());
@@ -256,7 +260,7 @@ public class Series {
 					}
 					
 				//9-> Devuelve un SortedMap en el que las claves son los estados y los valores 
-					//con listas con las n peores series de ese estado.
+					//son listas con las n peores series de ese estado.
 					public Map<Estado, List<String>> getSeriesPeoresPorEstado(Integer n){
 						return movies.stream()
 								.collect(Collectors.groupingBy(Netflix::getEstado, 
@@ -276,12 +280,12 @@ public class Series {
 						
 					}
 					
-					//10 -> Calcula un map con la visualizacion media por serie y devuelve 
-					//la serie con mayor visualizacion
+					//10 -> Calcula un map con la visualizacion media por genero y devuelve 
+					//el genero con mayor visualizacion
 					public String getMejorSeriePorMedia() {
 						
 						Map<String, Double> aux = movies.stream()
-								.collect(Collectors.groupingBy(Netflix::getTitulo, 
+								.collect(Collectors.groupingBy(Netflix::getGenero, 
 										Collectors.averagingDouble(Netflix::getVisualizaciones)));
 				
 						return aux.entrySet().stream().max(Comparator.comparing(Entry::getValue)).get().getKey();
