@@ -50,8 +50,9 @@ Representa una serie de netflix concreta.
 - C1: Crea un objeto de tipo ```Netflix``` a partir de los siguientes parámetros: ```String titulo, String genero, String plataforma, LocalDate fEstreno, Integer capitulos, Boolean mundial, Double visualizaciones```.Tiene un parámetro por la propiedad del tipo estado y las temporadas.
 - C2: Crea un objeto de tipo ```Netflix``` a partir de los siguientes parámetros: ```String titulo, String genero, String plataforma, LocalDate fEstreno, Integer temporadas,Integer capitulos, Estado estado,Boolean mundial, Double visualizaciones```.
 - C3: Crea un objeto del tipo contenedor con todos los elementos del stream.
-**Restricciones**:
- 
+
+
+**Restricciones**: 
 - R1: el titulo no puede ser nulo
 - R2: los capitulos deben ser mayor que cero.
 ***Criterio de igualdad**: Dos series son iguales si su titulo y fecha de estreno son iguales.
